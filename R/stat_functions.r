@@ -35,9 +35,9 @@ na2zero <- function(x) {
 # function to calculate the mode 
 mode <- function(x) {
     ux <- unique(x)
-    ux[which.max(tabulate(match(x, ux)))]
+    tab <- tabulate(match(x, ux))
+    ux[tab == max(tab)]
 }
-
 
 # a method to find outliers of a set of data
 # using the k-means clustering
